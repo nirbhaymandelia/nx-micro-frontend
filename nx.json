@@ -28,6 +28,15 @@
     "todos-e2e": {
       "tags": [],
       "implicitDependencies": ["todos"]
+    },
+    "api": {
+      "tags": []
+    },
+    "data": {
+      "tags": []
+    },
+    "ui": {
+      "tags": []
     }
   }
 }
