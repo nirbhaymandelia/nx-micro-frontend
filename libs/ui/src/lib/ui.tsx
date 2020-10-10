@@ -1,7 +1,5 @@
 import React from 'react';
 
-import './ui.css';
-
 /* eslint-disable-next-line */
 export interface UiProps {}
 

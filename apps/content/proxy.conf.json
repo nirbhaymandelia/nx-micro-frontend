@@ -1,0 +1,53 @@
+{
+  "/api": {
+    "target": "http://localhost:3333",
+    "secure": false
+  },
+  "/content/_next": {
+    "target": "http://localhost:3001",
+    "pathRewrite": {
+      "^/content/_next": "/_next"
+    },
+    "secure": false
+  },
+  "/c/*": {
+    "target": "http://localhost:3002",
+    "secure": false
+  },
+  "/p/*": {
+    "target": "http://localhost:3002",
+    "secure": false
+  },
+  "/s/*": {
+    "target": "http://localhost:3002",
+    "secure": false
+  },
+  "/browse":{
+    "target": "http://localhost:3002",
+    "secure": false
+  },
+  "/cart": {
+    "target": "http://localhost:3003",
+    "secure": false
+  },
+  "/checkout": {
+    "target": "http://localhost:3003",
+    "secure": false
+  },
+  "/cnc-assets": {
+    "target": "http://localhost:3003",
+    "secure": false
+  },
+  "/signin": {
+    "target": "http://localhost:3004",
+    "secure": false
+  },
+  "/signup": {
+    "target": "http://localhost:3004",
+    "secure": false
+  },
+  "/account-assets": {
+    "target": "http://localhost:3004",
+    "secure": false
+  }
+}

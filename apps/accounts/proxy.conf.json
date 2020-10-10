@@ -1,0 +1,9 @@
+{
+  "/account-assets": {
+    "target": "http://localhost:3004",
+    "pathRewrite": {
+      "^/account-assets/_next": "/_next"
+    },
+    "secure": false
+  }
+}

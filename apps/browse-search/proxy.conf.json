@@ -1,0 +1,9 @@
+{
+  "/browse": {
+    "target": "http://localhost:3002",
+    "pathRewrite": {
+      "^/browse/_next": "/_next"
+    },
+    "secure": false
+  }
+}

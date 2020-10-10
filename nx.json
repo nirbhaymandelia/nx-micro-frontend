@@ -37,6 +37,34 @@
     },
     "ui": {
       "tags": []
+    },
+    "content": {
+      "tags": []
+    },
+    "content-e2e": {
+      "tags": [],
+      "implicitDependencies": ["content"]
+    },
+    "cart-checkout": {
+      "tags": []
+    },
+    "cart-checkout-e2e": {
+      "tags": [],
+      "implicitDependencies": ["cart-checkout"]
+    },
+    "browse-search": {
+      "tags": []
+    },
+    "browse-search-e2e": {
+      "tags": [],
+      "implicitDependencies": ["browse-search"]
+    },
+    "accounts": {
+      "tags": []
+    },
+    "accounts-e2e": {
+      "tags": [],
+      "implicitDependencies": ["accounts"]
     }
   }
 }

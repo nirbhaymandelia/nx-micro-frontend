@@ -211,6 +211,346 @@
           }
         }
       }
+    },
+    "content": {
+      "root": "apps/content",
+      "sourceRoot": "apps/content",
+      "projectType": "application",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/next:build",
+          "options": {
+            "root": "apps/content",
+            "outputPath": "dist/apps/content"
+          },
+          "configurations": {
+            "production": {}
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/next:server",
+          "options": {
+            "buildTarget": "content:build",
+            "dev": true,
+            "port": 3001,
+            "proxyConfig": "apps/content/proxy.conf.json"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "content:build:production",
+              "dev": false
+            }
+          }
+        },
+        "export": {
+          "builder": "@nrwl/next:export",
+          "options": {
+            "buildTarget": "content:build:production"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "tsConfig": [
+              "apps/content/tsconfig.json",
+              "apps/content/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/content/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/content/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "content-e2e": {
+      "root": "apps/content-e2e",
+      "sourceRoot": "apps/content-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/content-e2e/cypress.json",
+            "tsConfig": "apps/content-e2e/tsconfig.e2e.json",
+            "devServerTarget": "content:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "content:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "tsConfig": ["apps/content-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/content-e2e/**/*"]
+          }
+        }
+      }
+    },
+    "cart-checkout": {
+      "root": "apps/cart-checkout",
+      "sourceRoot": "apps/cart-checkout",
+      "projectType": "application",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/next:build",
+          "options": {
+            "root": "apps/cart-checkout",
+            "outputPath": "dist/apps/cart-checkout"
+          },
+          "configurations": {
+            "production": {}
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/next:server",
+          "options": {
+            "buildTarget": "cart-checkout:build",
+            "dev": true,
+            "port": 3003,
+            "proxyConfig": "apps/cart-checkout/proxy.conf.json"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "cart-checkout:build:production",
+              "dev": false
+            }
+          }
+        },
+        "export": {
+          "builder": "@nrwl/next:export",
+          "options": {
+            "buildTarget": "cart-checkout:build:production"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "tsConfig": [
+              "apps/cart-checkout/tsconfig.json",
+              "apps/cart-checkout/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/cart-checkout/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/cart-checkout/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "cart-checkout-e2e": {
+      "root": "apps/cart-checkout-e2e",
+      "sourceRoot": "apps/cart-checkout-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/cart-checkout-e2e/cypress.json",
+            "tsConfig": "apps/cart-checkout-e2e/tsconfig.e2e.json",
+            "devServerTarget": "cart-checkout:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "cart-checkout:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "tsConfig": ["apps/cart-checkout-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/cart-checkout-e2e/**/*"]
+          }
+        }
+      }
+    },
+    "browse-search": {
+      "root": "apps/browse-search",
+      "sourceRoot": "apps/browse-search",
+      "projectType": "application",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/next:build",
+          "options": {
+            "root": "apps/browse-search",
+            "outputPath": "dist/apps/browse-search"
+          },
+          "configurations": {
+            "production": {}
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/next:server",
+          "options": {
+            "buildTarget": "browse-search:build",
+            "dev": true,
+            "port": 3002,
+            "proxyConfig": "apps/browse-search/proxy.conf.json"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "browse-search:build:production",
+              "dev": false
+            }
+          }
+        },
+        "export": {
+          "builder": "@nrwl/next:export",
+          "options": {
+            "buildTarget": "browse-search:build:production"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "tsConfig": [
+              "apps/browse-search/tsconfig.json",
+              "apps/browse-search/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/browse-search/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/browse-search/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "browse-search-e2e": {
+      "root": "apps/browse-search-e2e",
+      "sourceRoot": "apps/browse-search-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/browse-search-e2e/cypress.json",
+            "tsConfig": "apps/browse-search-e2e/tsconfig.e2e.json",
+            "devServerTarget": "browse-search:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "browse-search:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "tsConfig": ["apps/browse-search-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/browse-search-e2e/**/*"]
+          }
+        }
+      }
+    },
+    "accounts": {
+      "root": "apps/accounts",
+      "sourceRoot": "apps/accounts",
+      "projectType": "application",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/next:build",
+          "options": {
+            "root": "apps/accounts",
+            "outputPath": "dist/apps/accounts"
+          },
+          "configurations": {
+            "production": {}
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/next:server",
+          "options": {
+            "buildTarget": "accounts:build",
+            "dev": true,
+            "port": 3004,
+            "proxyConfig": "apps/accounts/proxy.conf.json"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "accounts:build:production",
+              "dev": false
+            }
+          }
+        },
+        "export": {
+          "builder": "@nrwl/next:export",
+          "options": {
+            "buildTarget": "accounts:build:production"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "tsConfig": [
+              "apps/accounts/tsconfig.json",
+              "apps/accounts/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/accounts/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/accounts/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "accounts-e2e": {
+      "root": "apps/accounts-e2e",
+      "sourceRoot": "apps/accounts-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/accounts-e2e/cypress.json",
+            "tsConfig": "apps/accounts-e2e/tsconfig.e2e.json",
+            "devServerTarget": "accounts:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "accounts:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "tsConfig": ["apps/accounts-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/accounts-e2e/**/*"]
+          }
+        }
+      }
     }
   },
   "cli": {
@@ -228,6 +568,12 @@
       },
       "library": {
         "style": "css",
+        "linter": "eslint"
+      }
+    },
+    "@nrwl/next": {
+      "application": {
+        "style": "@emotion/styled",
         "linter": "eslint"
       }
     }

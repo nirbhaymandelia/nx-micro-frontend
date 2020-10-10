@@ -1,0 +1,9 @@
+{
+  "/cnc-assets": {
+    "target": "http://localhost:3003",
+    "pathRewrite": {
+      "^/cnc-assets/_next": "/_next"
+    },
+    "secure": false
+  }
+}
